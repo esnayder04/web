@@ -1,30 +1,40 @@
-/* Main */
 main {
-  flex: 1;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
 }
 
 .titulo {
-  color: rgb(111, 111, 111);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 131, 219);
+  font-family: Arial, Helvetica, sans-serif; 
   text-align: center;
+  margin-bottom: 15px;
 }
 
-/* Grid productos */
-.productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+/* Carrusel */
+.carrusel-contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   gap: 20px;
+  padding: 10px;
 }
 
 .producto {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 15px;
   text-align: center;
   transition: transform 0.3s;
+  min-width: 200px;
+  max-width: 250px;
+  flex: 0 0 auto;
+  padding: 15px;
 }
 
 .producto:hover {
@@ -42,4 +52,32 @@ main {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Botones carrusel */
+.carrusel-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.carrusel-btn:hover {
+  opacity: 1;
+}
+
+.carrusel-btn.izquierda {
+  left: 0;
+}
+
+.carrusel-btn.derecha {
+  right: 0;
 }

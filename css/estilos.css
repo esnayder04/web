@@ -5,12 +5,14 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Header */
 header {
   background-color: #333;
   color: white;
   padding: 1em;
   text-align: center;
+   position: sticky;  /* se queda fijo */
+  top: 0;            /* pegado arriba */
+  z-index: 1000;     /* siempre encima del contenido */
 }
 
 nav ul {
@@ -20,7 +22,6 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* que se ajuste en pantallas pequeñas */
 }
 
 nav ul li a {
@@ -28,16 +29,16 @@ nav ul li a {
   padding: 1em;
   color: white;
   text-decoration: none;
+  width: 100px;
 }
 
 nav ul li:hover {
   background-color: #666;
 }
 
-/* Título principal */
 h1 {
-  font-family: 'Bangers', cursive;
   font-size: 40px;
-  margin: 5px;
-  line-height: 1.2;
+  margin: 2px;
+  padding: 2px;
+  line-height: 1;
 }

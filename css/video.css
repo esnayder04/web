@@ -1,21 +1,46 @@
-/* Contenedor general */
 .contenedor {
   display: flex;
   width: 100%;
-  margin-top: 10px;
-  flex-wrap: wrap; /* permite que el main baje en celular */
+  height: auto;
+  margin-top: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* Sección video */
 .videosec {
-  flex: 0 0 20%;
+  flex: 0 0 30%;         /* ocupa 30% en escritorio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   background: black;
-  min-width: 250px; /* en cel se vuelve bloque */
+  border-radius: 10px;
 }
 
 .videosec video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column;
+  }
+
+  .videosec {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .videosec video {
+    max-width: 100%;
+  }
+
+  main {
+    margin-top: 10px;
+  }
 }
